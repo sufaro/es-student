@@ -8,9 +8,21 @@ const uint DEBOUNCE_MS = 20;
 
 bool get_button_debounce(uint pin)
 {
-    bool state = gpio_get(pin);
+    static bool initialized = false;
+    static bool stable = true;
+    if (!initialized)
+    {
+        stable = gpio_get(pin);
+        initialized = true;
+    }
+    bool first = gpio_get(pin);
     sleep_ms(DEBOUNCE_MS);
-    return state && gpio_get(pin);
+    bool second = gpio_get(pin);
+    if (first == second)
+    {
+        stable = second;
+    }
+    return stable;
 }
 
 void set_led(bool on)
@@ -51,7 +63,7 @@ int main()
     gpio_pull_up(BUTTON_PIN);
 
     bool led = false;
-    bool previous = false;
+    bool previous = true;
 
     while (1)
     {

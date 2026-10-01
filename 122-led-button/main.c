@@ -14,7 +14,7 @@ int main()
     gpio_pull_up(BUTTON_PIN);
 
     bool led = false;
-    bool previous = false;
+    bool previous = gpio_get(BUTTON_PIN);
 
     while (1)
     {
