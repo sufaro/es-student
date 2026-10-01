@@ -1,5 +1,7 @@
 #pragma once
-#include <stdint.h>
+
+#include "pico/types.h"
+
 void profiling_init(void);
 void profiling_iteration(void);
 float profiling_avg_us(void);
