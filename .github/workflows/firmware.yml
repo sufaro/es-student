@@ -1,0 +1,51 @@
+name: Firmware builds and offline tests
+on:
+  push:
+    paths:
+      - '231-firmware-template/**'
+      - '239-two-buttons/**'
+      - '311-adc/**'
+      - '321-audio-recorder/**'
+      - 'libs/**'
+      - 'tests/**'
+      - '.github/workflows/firmware.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: [231-firmware-template, 239-two-buttons, 311-adc, 321-audio-recorder]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ant-lab-ru/es-test/.github/actions/pico-toolchain@master
+      - name: Build with profiling
+        run: |
+          cmake -S '${{ matrix.project }}' -B build -DPICO_NO_PICOTOOL=1
+          cmake --build build --parallel 4
+          if [ '${{ matrix.project }}' = 231-firmware-template ]; then
+            test "$(wc -c < build/231_firmware_template.bin)" -le 49152
+          fi
+      - name: Build without profiling
+        run: |
+          cmake -S '${{ matrix.project }}' -B build-off -DPICO_NO_PICOTOOL=1 -DENABLE_PROFILING=OFF
+          cmake --build build-off --parallel 4
+          ! arm-none-eabi-nm build-off/*.elf | grep -E ' (profiling_start|profiling_stop)$'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.project }}-firmware
+          path: |
+            build/*.elf
+            build/*.bin
+  offline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: |
+          cmake -S tests -B tests/build
+          cmake --build tests/build --parallel 2
+          ctest --test-dir tests/build --output-on-failure
+          python3 -m pip install pyserial==3.5
+          python3 -m unittest discover -s tests -p 'test_*.py' -v

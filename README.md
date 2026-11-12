@@ -13,6 +13,12 @@
 | `134-led-module` | 1.3.5–1.3.7: модули, журнал и паспорт |
 | `211-command-usb` | 2.1.1–2.1.6: строковые команды, указатели и память |
 | `221-command-time` | 2.2.1–2.2.5: часы, мигание, вычисления и профилирование |
+| `231-firmware-template` | 2.3.1–2.3.8: протокол, API, задачи, библиотеки, профилирование |
+| `239-two-buttons` | 2.3.9: независимые кнопки на GP15 и GP14 |
+| `311-adc` | 3.1.1–3.1.5: напряжение, температура, телеметрия и RC-цепь |
+| `321-audio-recorder` | 3.2.1–3.2.7: таймеры, DMA, поток, ШИМ, watchdog и микрофон |
+
+Описание новых проектов, команды и порядок проверки: [задания 2.3–3.2](ASSIGNMENTS.md).
 
 ## Сборка
 
@@ -100,3 +106,24 @@ Pop-Location
 [![2.2.3](https://github.com/sufaro/es-student/actions/workflows/check-2-2-3.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-2-2-3.yml)
 [![2.2.4](https://github.com/sufaro/es-student/actions/workflows/check-2-2-4.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-2-2-4.yml)
 [![2.2.5](https://github.com/sufaro/es-student/actions/workflows/check-2-2-5.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-2-2-5.yml)
+[![2.3.1](https://github.com/sufaro/es-student/actions/workflows/check-2-3-1.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-2-3-1.yml)
+[![2.3.2](https://github.com/sufaro/es-student/actions/workflows/check-2-3-2.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-2-3-2.yml)
+[![2.3.3](https://github.com/sufaro/es-student/actions/workflows/check-2-3-3.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-2-3-3.yml)
+[![2.3.4](https://github.com/sufaro/es-student/actions/workflows/check-2-3-4.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-2-3-4.yml)
+[![2.3.5](https://github.com/sufaro/es-student/actions/workflows/check-2-3-5.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-2-3-5.yml)
+[![2.3.6](https://github.com/sufaro/es-student/actions/workflows/check-2-3-6.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-2-3-6.yml)
+[![2.3.7](https://github.com/sufaro/es-student/actions/workflows/check-2-3-7.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-2-3-7.yml)
+[![2.3.8](https://github.com/sufaro/es-student/actions/workflows/check-2-3-8.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-2-3-8.yml)
+[![2.3.9](https://github.com/sufaro/es-student/actions/workflows/check-2-3-9.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-2-3-9.yml)
+[![3.1.1](https://github.com/sufaro/es-student/actions/workflows/check-3-1-1.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-3-1-1.yml)
+[![3.1.2](https://github.com/sufaro/es-student/actions/workflows/check-3-1-2.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-3-1-2.yml)
+[![3.1.3](https://github.com/sufaro/es-student/actions/workflows/check-3-1-3.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-3-1-3.yml)
+[![3.1.4](https://github.com/sufaro/es-student/actions/workflows/check-3-1-4.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-3-1-4.yml)
+[![3.1.5](https://github.com/sufaro/es-student/actions/workflows/check-3-1-5.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-3-1-5.yml)
+[![3.2.1](https://github.com/sufaro/es-student/actions/workflows/check-3-2-1.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-3-2-1.yml)
+[![3.2.2](https://github.com/sufaro/es-student/actions/workflows/check-3-2-2.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-3-2-2.yml)
+[![3.2.3](https://github.com/sufaro/es-student/actions/workflows/check-3-2-3.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-3-2-3.yml)
+[![3.2.4](https://github.com/sufaro/es-student/actions/workflows/check-3-2-4.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-3-2-4.yml)
+[![3.2.5](https://github.com/sufaro/es-student/actions/workflows/check-3-2-5.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-3-2-5.yml)
+[![3.2.6](https://github.com/sufaro/es-student/actions/workflows/check-3-2-6.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-3-2-6.yml)
+[![3.2.7](https://github.com/sufaro/es-student/actions/workflows/check-3-2-7.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-3-2-7.yml)

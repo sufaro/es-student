@@ -1,0 +1,6 @@
+#pragma once
+#include "stdio-text-protocol/stdio-text-protocol.h"
+#include <stddef.h>
+typedef struct { const char *name; const char *help; void (*callback)(const command_t *command); } api_command_t;
+extern const api_command_t api_commands[];
+extern const size_t api_command_count;
