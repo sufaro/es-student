@@ -120,6 +120,7 @@ Pop-Location
 [![2.3.7](https://github.com/sufaro/es-student/actions/workflows/check-2-3-7.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-2-3-7.yml)
 [![2.3.8](https://github.com/sufaro/es-student/actions/workflows/check-2-3-8.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-2-3-8.yml)
 [![2.3.9](https://github.com/sufaro/es-student/actions/workflows/check-2-3-9.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-2-3-9.yml)
+[![2.3.9д](https://github.com/sufaro/es-student/actions/workflows/check-2-3-9d.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-2-3-9d.yml)
 [![3.1.1](https://github.com/sufaro/es-student/actions/workflows/check-3-1-1.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-3-1-1.yml)
 [![3.1.2](https://github.com/sufaro/es-student/actions/workflows/check-3-1-2.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-3-1-2.yml)
 [![3.1.3](https://github.com/sufaro/es-student/actions/workflows/check-3-1-3.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-3-1-3.yml)
@@ -132,3 +133,4 @@ Pop-Location
 [![3.2.5](https://github.com/sufaro/es-student/actions/workflows/check-3-2-5.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-3-2-5.yml)
 [![3.2.6](https://github.com/sufaro/es-student/actions/workflows/check-3-2-6.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-3-2-6.yml)
 [![3.2.7](https://github.com/sufaro/es-student/actions/workflows/check-3-2-7.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-3-2-7.yml)
+[![3.2.7д MODEL](https://github.com/sufaro/es-student/actions/workflows/check-3-2-7d.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-3-2-7d.yml)

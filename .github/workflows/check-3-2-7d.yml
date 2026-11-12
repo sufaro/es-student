@@ -1,0 +1,21 @@
+name: MODEL — 3.2.7д Запись в 8 бит
+on:
+  push:
+    paths:
+      - '321-audio-recorder/**'
+      - 'libs/**'
+      - 'tests/**'
+      - 'MODEL-MANIFEST.json'
+      - '.github/workflows/check-3-2-7d.yml'
+      - '.github/workflows/model-check.yml'
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  check:
+    uses: ./.github/workflows/model-check.yml
+    with:
+      task: 3-2-7d
+    secrets:
+      ES_ACCOUNT_SECRET: ${{ secrets.ES_ACCOUNT_SECRET }}

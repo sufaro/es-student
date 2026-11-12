@@ -113,10 +113,12 @@ def audio(out, build):
     spec = importlib.util.spec_from_file_location("recorder", ROOT / "321-audio-recorder/rec_audio.py")
     rec = importlib.util.module_from_spec(spec); spec.loader.exec_module(rec)
     project = out / "321-audio-recorder"
-    for name, task, melody in [("stream", "3.2.4", False), ("melody", "3.2.5", True),
-                                ("recording", "3.2.7", False)]:
+    for name, task, melody, bits in [("stream", "3.2.4", False, 16), ("melody", "3.2.5", True, 16),
+                                     ("recording", "3.2.7", False, 16),
+                                     ("recording-8bit", "3.2.7д", False, 8)]:
         events, length = rec.melody_events() if melody else ([], 4)
-        steps = [("stream_start\r", .01)]
+        command = "stream_start" if bits == 16 else "stream_start 8"
+        steps = [(command + "\r", .01)]
         if melody:
             # Explicit GP20 -> GP26 model loopback, including silent gaps.
             steps.append(("generate_tone 0\r", .49))
@@ -129,8 +131,8 @@ def audio(out, build):
         steps.append(("stream_stop\r", .01))
         chunks = execute(build, 3, steps)
         wav_name = name + ".wav" if name != "stream" else None
-        writer = rec.WaveWriter(str(project / wav_name), 16, melody) if wav_name else None
-        receiver = rec.Receiver(16, writer.feed if writer else None, keep_samples=False)
+        writer = rec.WaveWriter(str(project / wav_name), bits, melody) if wav_name else None
+        receiver = rec.Receiver(bits, writer.feed if writer else None, keep_samples=False)
         try:
             # Deliberately fragment at non-frame boundaries, as with USB reads.
             for data in chunks:
@@ -140,8 +142,9 @@ def audio(out, build):
             if writer: writer.close()
         start, _ = rec.read_line_until_bytes(chunks[0], "stream: started")
         stop, _ = rec.read_line_until_bytes(chunks[-1], "stream: stopped")
-        assert receiver.frames > 250 and receiver.lost == 0 and stop
-        exchange = [("-->", "stream_start"), ("<--", start)]
+        assert receiver.frames > (250 if bits == 16 else 150) and receiver.lost == 0 and stop
+        assert receiver.sample_count == receiver.frames * (512 if bits == 16 else 1024)
+        exchange = [("-->", command), ("<--", start)]
         if melody:
             exchange.append(("-->", "generate_tone: %d команд, MODEL" % (len(events) + 1)))
         exchange.extend([("-->", "stream_stop"), ("<--", stop)])

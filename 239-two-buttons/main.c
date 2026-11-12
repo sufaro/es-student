@@ -10,7 +10,7 @@
 #include <stddef.h>
 enum { STOPWATCH_LOOP, STOPWATCH_COMMAND, STOPWATCH_LED, STOPWATCH_BUTTON, STOPWATCH_PI };
 int main(void) {
-    platform_init(); stdio_text_protocol_init(); led_task_init(); button_task_init(0,led_task_next_state); button_task_init(1,led_task_next_period); pi_task_init();
+    platform_init(); stdio_text_protocol_init(); led_task_init(); button_task_init(0,led_task_next_state,led_task_blink); button_task_init(1,led_task_next_period,NULL); pi_task_init();
     profiling_stopwatch_init(STOPWATCH_LOOP,"loop"); profiling_stopwatch_init(STOPWATCH_COMMAND,"command");
     profiling_stopwatch_init(STOPWATCH_LED,"led"); profiling_stopwatch_init(STOPWATCH_BUTTON,"button"); profiling_stopwatch_init(STOPWATCH_PI,"pi");
     LOG_INF("%s %s",FIRMWARE_NAME,FIRMWARE_VERSION);

@@ -1,4 +1,5 @@
 #include "led-task/led-task.h"
+void led_task_blink(void) { led_task_set_state(LED_STATE_BLINK); }
 #include "platform/platform.h"
 #include "systime/systime.h"
 static led_state_t state;
