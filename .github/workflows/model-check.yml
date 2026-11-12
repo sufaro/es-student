@@ -1,0 +1,59 @@
+name: Course check with explicit MODEL report
+on:
+  workflow_call:
+    inputs:
+      task:
+        required: true
+        type: string
+    secrets:
+      ES_ACCOUNT_SECRET:
+        required: false
+permissions:
+  contents: read
+jobs:
+  check:
+    name: MODEL ${{ inputs.task }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          path: student
+      - uses: actions/checkout@v7
+        with:
+          repository: ant-lab-ru/es-test
+          path: es-test
+      - uses: ant-lab-ru/es-test/.github/actions/pico-toolchain@master
+      - name: Run original course check
+        env:
+          TASK: ${{ inputs.task }}
+          CHECKS_JSON: ${{ runner.temp }}/report.json
+        run: bash "es-test/checks/check-$TASK.sh" student
+      - name: Mark report as MODEL without changing test results
+        if: always()
+        env:
+          REPORT: ${{ runner.temp }}/report.json
+        run: python3 student/tests/mark_model_report.py "$REPORT"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: model-report-${{ inputs.task }}
+          path: ${{ runner.temp }}/report.json
+      - name: Submit explicitly labeled MODEL report to course dashboard
+        if: always()
+        env:
+          ES_ACCOUNT_SECRET: ${{ secrets.ES_ACCOUNT_SECRET }}
+          REPORT: ${{ runner.temp }}/report.json
+        run: |
+          if [ -z "$ES_ACCOUNT_SECRET" ]; then
+            echo "ES_ACCOUNT_SECRET is absent; dashboard submission skipped."
+            exit 0
+          fi
+          test -f "$REPORT"
+          # Fail closed: an unmarked report must never be submitted by this workflow.
+          python3 student/tests/mark_model_report.py --verify "$REPORT"
+          code=$(curl -sS -o response.txt -w '%{http_code}' -X POST 'https://es.ant-lab.ru/api/results/' \
+            -H "Authorization: Bearer $ES_ACCOUNT_SECRET" \
+            -H 'Content-Type: application/json' --data @"$REPORT")
+          echo "Course dashboard response: $code"
+          cat response.txt
+          test "$code" = 200

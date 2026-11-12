@@ -80,9 +80,10 @@ Pop-Location
 и скрипты опроса платы из [ant-lab-ru/es-book](https://github.com/ant-lab-ru/es-book).
 Для занятий 2.3.8, 3.1 и 3.2 включён режим **MODEL без платы**: исходная логика
 выполняется на ПК с моделью платформы. Логи и графики помечены, аудио синтетическое.
-Эти проверки не отправляют результаты в кабинет курса. Подробности и команды
-воспроизведения — в [ASSIGNMENTS.md](ASSIGNMENTS.md). Для остальных проверок
-отправка в кабинет зависит от настроенного секрета `ES_ACCOUNT_SECRET`.
+Отчёты отправляются в кабинет с префиксом MODEL и явным замечанием об отсутствии
+физических измерений, если настроен секрет `ES_ACCOUNT_SECRET`. Допустимость таких
+опытов для зачёта определяет преподаватель. Подробности и команды воспроизведения —
+в [ASSIGNMENTS.md](ASSIGNMENTS.md).
 
 [![1.1.1](https://github.com/sufaro/es-student/actions/workflows/check-1-1-1.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-1-1-1.yml)
 [![1.1.2](https://github.com/sufaro/es-student/actions/workflows/check-1-1-2.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-1-1-2.yml)
