@@ -76,7 +76,7 @@ uint32_t platform_timer_blink_stop(void) {
 bool platform_timer_blink_start(uint32_t period_ms) {
     if(period_ms<10 || period_ms>60000) return false;
     platform_timer_blink_stop(); indicator_toggles=0; indicator_on=false;
-    indicator_active=add_repeating_timer_ms(-(int32_t)(period_ms/2),indicator_irq,NULL,&indicator_timer);
+    indicator_active=add_repeating_timer_ms(-(int32_t)period_ms,indicator_irq,NULL,&indicator_timer);
     return indicator_active;
 }
 static bool capture_irq(struct repeating_timer *timer) {

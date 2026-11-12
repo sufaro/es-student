@@ -78,7 +78,11 @@ Pop-Location
 
 Используются исходные проверки [ant-lab-ru/es-test](https://github.com/ant-lab-ru/es-test)
 и скрипты опроса платы из [ant-lab-ru/es-book](https://github.com/ant-lab-ru/es-book).
-Результаты отправляются в кабинет курса, если настроен секрет `ES_ACCOUNT_SECRET`.
+Для занятий 2.3.8, 3.1 и 3.2 включён режим **MODEL без платы**: исходная логика
+выполняется на ПК с моделью платформы. Логи и графики помечены, аудио синтетическое.
+Эти проверки не отправляют результаты в кабинет курса. Подробности и команды
+воспроизведения — в [ASSIGNMENTS.md](ASSIGNMENTS.md). Для остальных проверок
+отправка в кабинет зависит от настроенного секрета `ES_ACCOUNT_SECRET`.
 
 [![1.1.1](https://github.com/sufaro/es-student/actions/workflows/check-1-1-1.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-1-1-1.yml)
 [![1.1.2](https://github.com/sufaro/es-student/actions/workflows/check-1-1-2.yml/badge.svg)](https://github.com/sufaro/es-student/actions/workflows/check-1-1-2.yml)

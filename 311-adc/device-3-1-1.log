@@ -1,0 +1,48 @@
+MODEL: host platform stubs; no physical board, measurements or recorded voice.
+задание: 3.1.1
+проект: 311-adc
+устройство: 2e8a:000a
+серийный номер: 0000000000000000
+порт: MODEL
+начало: 2026-11-12T00:00:00
+   0.000 --> 
+   0.500 --> help
+   0.525 <-- help
+   0.525 <-- help             list of commands
+   0.525 <-- info             device passport
+   0.525 <-- uptime           time since reset
+   0.525 <-- led_enable       LED on
+   0.525 <-- led_disable      LED off
+   0.525 <-- led_blink        LED blink
+   0.525 <-- led_period       LED period in ms
+   0.525 <-- button           button state and press count
+   0.525 <-- pi_start         calculate pi: pi_start [terms]
+   0.525 <-- pi               pi result
+   0.525 <-- profiling        stopwatch statistics
+   0.525 <-- profiling_reset  reset stopwatches
+   0.525 <-- get_voltage      GP26 voltage
+   0.525 <-- get_temp         chip temperature
+   0.525 <-- tm_start         telemetry: tm_start [period_ms]
+   0.525 <-- tm_stop          stop telemetry
+   0.525 <-- charge_on        charge RC circuit on GP22
+   0.525 <-- charge_off       discharge RC circuit
+   1.500 --> info
+   1.525 <-- info
+   1.525 <-- name: es-adc
+   1.525 <-- version: 1.0.0
+   1.525 <-- project: 311-adc
+   1.525 <-- repo: https://github.com/sufaro/es-student
+   1.525 <-- board: pico
+   1.525 <-- serial: 0000000000000000
+   1.525 <-- chip: manufacturer 0x04d, part 0x2040, revision 2
+   1.525 <-- pico-sdk: MODEL
+   2.500 --> get_voltage
+   2.525 <-- get_voltage
+   2.525 <-- voltage: 0.000 V
+   3.500 --> get_voltage
+   3.525 <-- get_voltage
+   3.525 <-- voltage: 0.000 V
+   4.500 --> get_voltage
+   4.525 <-- get_voltage
+   4.525 <-- voltage: 0.000 V
+итог: отправлено кадров 6, принято строк 34

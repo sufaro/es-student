@@ -47,5 +47,28 @@ jobs:
           cmake -S tests -B tests/build
           cmake --build tests/build --parallel 2
           ctest --test-dir tests/build --output-on-failure
-          python3 -m pip install pyserial==3.5
+          python3 -m pip install -r requirements.txt
           python3 -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Recreate MODEL evidence from production logic
+        run: python3 tests/run_model.py --build tests/build
+      - uses: actions/checkout@v7
+        with:
+          repository: ant-lab-ru/es-test
+          path: tests/course-checks
+      - name: Unmodified course checks on regenerated MODEL evidence
+        run: |
+          unset PICO_SDK_PATH
+          for task in 2-3-8 3-1-1 3-1-2 3-1-3 3-1-4 3-1-5 3-2-1 3-2-2 3-2-3 3-2-4 3-2-5 3-2-6 3-2-7; do
+            bash tests/course-checks/checks/check-$task.sh .
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MODEL-evidence-no-hardware
+          path: |
+            MODEL-MANIFEST.json
+            231-firmware-template/*.log
+            311-adc/*.log
+            311-adc/*.csv
+            311-adc/*.png
+            321-audio-recorder/*.log
+            321-audio-recorder/*.wav

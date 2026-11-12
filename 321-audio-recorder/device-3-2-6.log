@@ -1,0 +1,88 @@
+MODEL: host platform stubs; no physical board, measurements or recorded voice.
+задание: 3.2.6
+проект: 321-audio-recorder
+устройство: 2e8a:000a
+серийный номер: 0000000000000000
+порт: MODEL
+начало: 2026-11-12T00:00:00
+   0.000 --> 
+   0.500 --> help
+   0.525 <-- help
+   0.525 <-- help             list of commands
+   0.525 <-- info             device passport
+   0.525 <-- uptime           time since reset
+   0.525 <-- led_enable       LED on
+   0.525 <-- led_disable      LED off
+   0.525 <-- led_blink        LED blink
+   0.525 <-- led_period       LED period in ms
+   0.525 <-- button           button state and press count
+   0.525 <-- pi_start         calculate pi: pi_start [terms]
+   0.525 <-- pi               pi result
+   0.525 <-- profiling        stopwatch statistics
+   0.525 <-- profiling_reset  reset stopwatches
+   0.525 <-- get_voltage      GP26 voltage
+   0.525 <-- get_temp         chip temperature
+   0.525 <-- tm_start         telemetry: tm_start [period_ms]
+   0.525 <-- tm_stop          stop telemetry
+   0.525 <-- charge_on        charge RC circuit on GP22
+   0.525 <-- charge_off       discharge RC circuit
+   0.525 <-- timer_blink_start timer LED period in ms
+   0.525 <-- timer_blink_stop stop timer LED
+   0.525 <-- cap_start        timer capture: cap_start N period_us
+   0.525 <-- cap_dump         timer capture results
+   0.525 <-- dma_cap          capture N samples using DMA
+   0.525 <-- generate_tone    PWM tone frequency in Hz; 0 stops
+   0.525 <-- mic_bias         microphone DC bias
+   0.525 <-- mic_level        microphone level: mic_level [ms]
+   0.525 <-- stream_start     stream_start [8|16]
+   0.525 <-- stream_stop      stop stream
+   0.525 <-- wdt_enable       watchdog timeout in ms
+   0.525 <-- hang             stop superloop until reset
+   0.525 <-- reset_reason     reset reason and count
+   1.500 --> info
+   1.525 <-- info
+   1.525 <-- name: es-recorder
+   1.525 <-- version: 1.0.0
+   1.525 <-- project: 321-audio-recorder
+   1.525 <-- repo: https://github.com/sufaro/es-student
+   1.525 <-- board: pico
+   1.525 <-- serial: 0000000000000000
+   1.525 <-- chip: manufacturer 0x04d, part 0x2040, revision 2
+   1.525 <-- pico-sdk: MODEL
+   2.500 --> reset_reason
+   2.525 <-- reset_reason
+   2.525 <-- reset: other, restarts 0
+   3.000 --> wdt_enable 9000
+   3.025 <-- wdt_enable 9000
+   3.025 <-- error: timeout_ms must be 1..8388
+   3.500 --> wdt_enable 2000
+   3.525 <-- wdt_enable 2000
+   3.525 <-- wdt: enabled, timeout 2000 ms
+   4.000 --> uptime
+   4.025 <-- uptime
+   4.025 <-- uptime: 4001 ms
+   7.000 --> uptime
+   7.025 <-- uptime
+   7.025 <-- uptime: 7001 ms
+   7.500 --> hang
+   7.525 <-- hang
+   7.525 <-- hang: superloop stopped
+   8.500 --- ждём перезапуска платы
+  11.500 --- плата снова на связи
+  11.500 --> reset_reason
+  11.525 <-- reset_reason
+  11.525 <-- reset: watchdog, restarts 1
+  12.000 --> uptime
+  12.025 <-- uptime
+  12.025 <-- uptime: 2500 ms
+  12.500 --> info
+  12.525 <-- info
+  12.525 <-- name: es-recorder
+  12.525 <-- version: 1.0.0
+  12.525 <-- project: 321-audio-recorder
+  12.525 <-- repo: https://github.com/sufaro/es-student
+  12.525 <-- board: pico
+  12.525 <-- serial: 0000000000000000
+  12.525 <-- chip: manufacturer 0x04d, part 0x2040, revision 2
+  12.525 <-- pico-sdk: MODEL
+итог: отправлено кадров 13, принято строк 66

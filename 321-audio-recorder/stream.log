@@ -1,0 +1,14 @@
+MODEL: host platform stubs; no physical board, measurements or recorded voice.
+задание: 3.2.4
+проект: 321-audio-recorder
+устройство: 2e8a:000a
+серийный номер: 0000000000000000
+порт: MODEL
+начало: 2026-11-12T00:00:00
+--> stream_start
+<-- stream: started, 44100 Hz, 16 bit
+принято: кадров 344, отсчётов 176128, пропущено кадров 0, байтов вне кадров 115
+скорость: 44032 отсчётов в секунду за 4.00 с
+отсчёты: наименьший 1451, наибольший 1650, средний 1550.5
+--> stream_stop
+<-- stream: stopped, 344 frames, 176128 samples, 0 overruns

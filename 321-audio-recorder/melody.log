@@ -1,0 +1,16 @@
+MODEL: host platform stubs; no physical board, measurements or recorded voice.
+задание: 3.2.5
+проект: 321-audio-recorder
+устройство: 2e8a:000a
+серийный номер: 0000000000000000
+порт: MODEL
+начало: 2026-11-12T00:00:00
+--> stream_start
+<-- stream: started, 44100 Hz, 16 bit
+принято: кадров 2178, отсчётов 1115136, пропущено кадров 0, байтов вне кадров 2620
+скорость: 44101 отсчётов в секунду за 25.29 с
+отсчёты: наименьший 351, наибольший 2751, средний 1550.6
+файл: melody.wav, 16 бит, 44100 Гц, 25.29 с, смещение 0.0
+--> generate_tone: 88 команд, MODEL
+--> stream_stop
+<-- stream: stopped, 2178 frames, 1115136 samples, 0 overruns

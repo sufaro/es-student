@@ -1,0 +1,26 @@
+{
+  "mode": "MODEL",
+  "physical_board": false,
+  "limitations": "Ideal RC tau=1s, ADC signals, DMA/timer timing and reset are modeled. Synthetic recording.wav is not recorded voice. USB ID and zero serial are fixtures.",
+  "files": {
+    "231-firmware-template/device-2-3-8.log": "9ea5527e314885b9c76f6785fb4b41ea5bc553f154502fcf26e7db8d1c78809e",
+    "311-adc/device-3-1-1.log": "0aa5f9d1af807f36f81416d977bae1327a898d7c3e614ac6812787f4e6ccbfc8",
+    "311-adc/device-3-1-2.log": "5a94a9f66c269212f806a55d57e2aa42b384c0c7a7af5fe3d5508a47c49309c0",
+    "311-adc/device-3-1-3.log": "051d78f1da363338672c095e86cce92ca41eee8bc9e83c1141e89e94acfddbcd",
+    "311-adc/rc.csv": "ea677d35607f21a82dc1aea56330aea4bb4fd2693bac4299e371cdf99a10a123",
+    "311-adc/rc.log": "ba19b2e5236ca23c3c147c152a6c0813bab45b63f4a6f6a3b9c4591aea66e760",
+    "311-adc/rc.png": "bb9cec5b9c224ccf81e5bd778a77d922dd4816403a3a81397d3c656e613a6685",
+    "311-adc/telemetry.csv": "1fa3284bbf5688eafb042810ccf2df69911d5cf7f5086bb9130510baace41e3f",
+    "311-adc/telemetry.png": "435013396c9ed075936ea756bcd5be416542836646a789fceca8391f2072256f",
+    "321-audio-recorder/device-3-2-1.log": "ab0ce8f37aa2740633b2a3fb8a0e0918ee71fe7cd877a168f9f08e756983e997",
+    "321-audio-recorder/device-3-2-2.log": "494578e41f8cc53770703c134475b991c7e17e83457e602c9c9da2277831ac95",
+    "321-audio-recorder/device-3-2-3.log": "21fff3aad59a77f16284953eb8077c249fce2b1e6937a752b8b82fd6a8986278",
+    "321-audio-recorder/device-3-2-6.log": "3625c5f576a4e9583d5691bd287b58d36a3c6e354665d46c9cd9fcdbcc3b25d3",
+    "321-audio-recorder/device-3-2-7.log": "10b9db700442d5dd306c72813e62e9229355795697cd42e2eac80da2842b40ef",
+    "321-audio-recorder/melody.log": "e4e4b2a1f3a256c258c1eb2e7fe5ba3c231cb5b84f071d2076c8f6bfe92a2def",
+    "321-audio-recorder/melody.wav": "f0e59cfed9b0a3e98891670a1a5de56cab6a555dd14cc50a9c9426e9ab894a07",
+    "321-audio-recorder/recording.log": "b459f0c1de978458ad4ee7d958de344b620a8ee61ecdf5eb06c84af3ca1b0339",
+    "321-audio-recorder/recording.wav": "06dd0bdd425cc4547007252265bbb24fa1d812690eeb9621c8e87fee5569d2ed",
+    "321-audio-recorder/stream.log": "d2e493d69f39450ca59d29d1d7e6d682c772ef730c7b4f0903260fcdd415a032"
+  }
+}

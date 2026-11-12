@@ -101,8 +101,7 @@ static void cmd_timer_blink_stop(const command_t *c) { (void)c; if(stream_task_r
 static void cmd_cap_start(const command_t *c) {
     uint32_t n,us;
     if(c->argc!=2 || !parse_u32(c->argv[0],&n) || !parse_u32(c->argv[1],&us)) { puts("error: usage cap_start <N> <period_us>"); return; }
-    if(!n || n>2000) { puts("error: N must be 1..2000"); return; }
-    if(us<10 || us>INT32_MAX) { puts("error: period_us must be at least 10"); return; }
+    if(!n || n>2000 || us<10 || us>INT32_MAX) { puts("error: N must be 1..2000, period_us at least 10"); return; }
     if(!require_adc_idle()) return;
     if(platform_capture_start(n,us)) printf("capture: started, %lu samples, period %lu us\n",(unsigned long)n,(unsigned long)us);
     else puts("error: timer unavailable");
