@@ -160,7 +160,7 @@ const api_command_t api_commands[]={
     {"get_voltage","GP26 voltage",cmd_get_voltage}, {"get_temp","chip temperature",cmd_get_temp},
     {"tm_start","telemetry: tm_start [period_ms]",cmd_tm_start}, {"tm_stop","stop telemetry",cmd_tm_stop},
     {"charge_on","charge RC circuit on GP22",cmd_charge_on}, {"charge_off","discharge RC circuit",cmd_charge_off},
-    
+
     {"timer_blink_start","timer LED period in ms",cmd_timer_blink_start}, {"timer_blink_stop","stop timer LED",cmd_timer_blink_stop},
     {"cap_start","timer capture: cap_start N period_us",cmd_cap_start}, {"cap_dump","timer capture results",cmd_cap_dump},
     {"dma_cap","capture N samples using DMA",cmd_dma_cap}, {"generate_tone","PWM tone frequency in Hz; 0 stops",cmd_generate_tone},

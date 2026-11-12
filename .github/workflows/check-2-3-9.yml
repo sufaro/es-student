@@ -20,4 +20,3 @@ jobs:
     uses: ant-lab-ru/es-test/.github/workflows/check-2-3-9.yml@master
     secrets:
       ES_ACCOUNT_SECRET: ${{ secrets.ES_ACCOUNT_SECRET }}
-
